@@ -1,4 +1,4 @@
-# reverse_shells_tools
+# Reverse shells tools
 Scripts for generating reverse shells based mostly on PayloadAllTheThings.
 
 Using one script you can generate one-line reverse shell payloads.
