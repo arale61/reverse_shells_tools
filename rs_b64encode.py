@@ -89,7 +89,9 @@ def get_last_valid_space_index(encoded_payload, payload, invalid_char_index):
 
 def safe_encode(payload="", encoding='utf-8'):
     result = b64encode(payload.encode(encoding)).decode(encoding)
-    while True:
+    max_iterations = 100
+    iteration = 0
+    while True or  iteration < max_iterations:
         if '+' in result or '=' in result:
             decoded_payload = b64decode(result.encode(encoding)).decode(encoding)
             index_bad_char = result.find('+')
@@ -98,6 +100,7 @@ def safe_encode(payload="", encoding='utf-8'):
                         
             last_space_index = get_last_valid_space_index(result, decoded_payload, index_bad_char)
             result = b64encode(f"{decoded_payload[:last_space_index]} {decoded_payload[last_space_index:]} ".encode(encoding)).decode(encoding)
+            iteration += 1
         else:
             return result
 
