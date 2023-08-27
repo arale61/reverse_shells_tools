@@ -8,7 +8,7 @@ Using the other script you can base64 encode the reverse shell payload when appr
 I normally use the one-liner to pipe the result into the encoder when appropiate.
 
 The tools are **2 scripts**:
-- **rs_oneliner.py**: Mostly one-liner reverse shell generator, based on (https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md)[PayloadsAllTheThings]
+- **rs_oneliner.py**: Mostly one-liner reverse shell generator, based on [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md)
 - **rs_b64encode.py**: Use it in convination with **rs_oneliner.py** when appropiate payloads are used (payloads normally to be executed in a bash context). Using the **--echo** It can help you constructing an *echo <base64_encoded_payload> | base64 -d | bash* construct. And with **--echo** and **--url** it will use **url encode** the payload too.
 
 ## How to use
